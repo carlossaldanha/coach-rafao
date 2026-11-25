@@ -200,6 +200,89 @@
     transition: color .2s;
   }
   .lightbox-close:hover { color: var(--primary); }
+
+  /* ---------- Mobile optimization ---------- */
+  @media (max-width: 600px) {
+    .nav { padding: 10px 14px; }
+    .logo { font-size: 16px; }
+    .logo img { height: 32px !important; }
+    .nav-links { top: 58px; padding: 16px; gap: 12px; }
+    .nav-links a { font-size: 14px; padding: 8px 0; }
+    /* Steam button compact */
+    .nav > div > a[style*="steamcommunity"] { padding: 6px 10px !important; font-size: 12px !important; }
+    .nav > div > a[style*="steamcommunity"] svg { width: 14px !important; height: 14px !important; }
+    /* Music player compact */
+    #customPlayer { padding: 3px 8px !important; gap: 6px !important; }
+    #playBtn { width: 24px !important; height: 24px !important; font-size: 12px !important; }
+    #progressBar { min-width: 50px !important; max-width: 80px !important; height: 4px !important; }
+    #timeDisplay { font-size: 10px !important; min-width: 30px !important; }
+    /* Hero */
+    .hero { padding: 100px 16px 60px; min-height: auto; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 15px; }
+    .hero-cta { flex-direction: column; gap: 10px; }
+    .hero-cta .btn { width: 100%; text-align: center; }
+    .hero-card { padding: 20px; }
+    .hero-card li { font-size: 13px; padding: 6px 0; }
+    /* Sections */
+    section { padding: 60px 16px; }
+    .section-title h2 { font-size: 22px; letter-spacing: 1px; }
+    .section-title p { font-size: 14px; }
+    /* Stats */
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .stat-card { padding: 20px 12px; }
+    .stat-card .num { font-size: 32px; }
+    .stat-card .lbl { font-size: 11px; }
+    .stat-card .icon { font-size: 24px; margin-bottom: 8px; }
+    /* Calls */
+    .calls-grid { grid-template-columns: 1fr; gap: 16px; }
+    .call-card { padding: 18px; }
+    /* Lyrics */
+    .lyrics-section { padding: 20px 16px; }
+    .lyrics-section h3 { font-size: 20px; }
+    .lyrics-section .verse { padding: 12px; margin-bottom: 16px; }
+    .lyrics-section .verse p { font-size: 13px; line-height: 1.6; }
+    /* About */
+    .about h3 { font-size: 22px; }
+    .about p { font-size: 14px; }
+    /* Contact */
+    .contact-info, .form { padding: 20px; }
+    .info-item { gap: 10px; margin-bottom: 14px; }
+    .info-icon { width: 38px; height: 38px; font-size: 18px; }
+    .info-item h4 { font-size: 14px; }
+    .info-item p { font-size: 13px; }
+    .field input, .field textarea { padding: 10px 12px; font-size: 14px; }
+    /* Footer */
+    footer { padding: 30px 16px 16px; }
+    .footer-inner { gap: 20px; }
+    .footer-inner a { font-size: 13px; }
+    .copy { font-size: 12px; }
+    /* Float button */
+    .wa-float { width: 50px; height: 50px; bottom: 16px; right: 16px; }
+    .wa-float svg { width: 28px; height: 28px; }
+    /* Lightbox */
+    .lightbox-close { top: 12px; right: 16px; font-size: 32px; }
+    /* Images */
+    img { max-width: 100%; height: auto; }
+    /* Steam section grid */
+    #steam .container > div[style*="grid"] { grid-template-columns: 1fr !important; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 24px; }
+    .hero p { font-size: 14px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .stat-card { padding: 16px 8px; }
+    .stat-card .num { font-size: 28px; }
+    .stat-card .lbl { font-size: 10px; }
+    .nav-links { top: 54px; }
+    section { padding: 50px 12px; }
+    .hero { padding: 90px 12px 50px; }
+    /* Further compact music player */
+    #customPlayer { flex-wrap: wrap; justify-content: center; }
+    #progressBar { max-width: 100% !important; min-width: 120px !important; }
+  }
+
 </style>
 </head>
 <body>
