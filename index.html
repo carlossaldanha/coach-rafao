@@ -203,18 +203,20 @@
 
   /* ---------- Mobile optimization ---------- */
   @media (max-width: 600px) {
-    .nav { padding: 10px 14px; }
-    .logo { font-size: 16px; }
-    .logo img { height: 32px !important; }
-    .nav-links { top: 58px; padding: 16px; gap: 12px; }
-    .nav-links a { font-size: 14px; padding: 8px 0; }
+    .nav { padding: 8px 12px; flex-wrap: wrap; gap: 8px; }
+    .logo { font-size: 15px; flex: 1; min-width: 0; }
+    .logo img { height: 28px !important; width: auto !important; }
+    .menu-toggle { order: 3; }
+    .nav > div[style*="display:flex"] { order: 2; width: 100%; justify-content: center; gap: 8px; flex-wrap: wrap; }
+    .nav-links { top: 100%; padding: 12px; gap: 8px; }
+    .nav-links a { font-size: 14px; padding: 6px 0; }
     /* Steam button compact */
-    .nav > div > a[style*="steamcommunity"] { padding: 6px 10px !important; font-size: 12px !important; }
+    .nav > div > a[style*="steamcommunity"] { padding: 6px 10px !important; font-size: 12px !important; border-radius: 8px !important; }
     .nav > div > a[style*="steamcommunity"] svg { width: 14px !important; height: 14px !important; }
     /* Music player compact */
-    #customPlayer { padding: 3px 8px !important; gap: 6px !important; }
-    #playBtn { width: 24px !important; height: 24px !important; font-size: 12px !important; }
-    #progressBar { min-width: 50px !important; max-width: 80px !important; height: 4px !important; }
+    #customPlayer { padding: 4px 8px !important; gap: 6px !important; border-radius: 12px !important; width: auto; }
+    #playBtn { width: 26px !important; height: 26px !important; font-size: 12px !important; flex-shrink: 0; }
+    #progressBar { min-width: 60px !important; max-width: 100px !important; height: 4px !important; flex: 1; }
     #timeDisplay { font-size: 10px !important; min-width: 30px !important; }
     /* Hero */
     .hero { padding: 100px 16px 60px; min-height: auto; }
@@ -281,6 +283,25 @@
     /* Further compact music player */
     #customPlayer { flex-wrap: wrap; justify-content: center; }
     #progressBar { max-width: 100% !important; min-width: 120px !important; }
+  }
+
+
+  @media (max-width: 600px) {
+    .lightbox-overlay img {
+      max-width: 95vw !important;
+      max-height: 80vh !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+    .lightbox-overlay {
+      padding: 10px;
+    }
+    .lightbox-close {
+      top: 8px;
+      right: 12px;
+      font-size: 28px;
+    }
   }
 
 </style>
@@ -723,6 +744,8 @@ Só passa call errada, Rafão!</p>
 
   // Lightbox - click any image to expand
   function openLightbox(src) {
+  // Reset zoom on mobile
+  if (window.innerWidth <= 600) { zoomLevel = 1; }
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightboxImg');
     lbImg.src = src;
